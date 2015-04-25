@@ -1,0 +1,44 @@
+|SevenSensorSOPContinuous
+X1 => a6.IN0
+X1 => a5.IN0
+X1 => a3.IN0
+X1 => a2.IN0
+X1 => a1.IN0
+X2 => b5.IN0
+X2 => b4.IN0
+X2 => b3.IN0
+X2 => b2.IN0
+X2 => b1.IN0
+X2 => a1.IN1
+X3 => c4.IN0
+X3 => c3.IN0
+X3 => c2.IN0
+X3 => c1.IN0
+X3 => b1.IN1
+X3 => a2.IN1
+X4 => d3.IN0
+X4 => d2.IN0
+X4 => d1.IN0
+X4 => c1.IN1
+X4 => b2.IN1
+X4 => a3.IN1
+X5 => e2.IN0
+X5 => e1.IN0
+X5 => d1.IN1
+X5 => c2.IN1
+X5 => b3.IN1
+X6 => g1.IN0
+X6 => e1.IN1
+X6 => d2.IN1
+X6 => c3.IN1
+X6 => b4.IN1
+X6 => a5.IN1
+X7 => g1.IN1
+X7 => e2.IN1
+X7 => d3.IN1
+X7 => c4.IN1
+X7 => b5.IN1
+X7 => a6.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+

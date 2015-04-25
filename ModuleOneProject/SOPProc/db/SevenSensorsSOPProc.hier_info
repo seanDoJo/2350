@@ -1,0 +1,46 @@
+|SevenSensorsSOPProc
+X1 => always0.IN0
+X1 => always0.IN0
+X1 => always0.IN0
+X1 => always0.IN0
+X1 => always0.IN0
+X1 => always0.IN0
+X2 => always0.IN0
+X2 => always0.IN0
+X2 => always0.IN0
+X2 => always0.IN0
+X2 => always0.IN0
+X2 => always0.IN1
+X3 => always0.IN0
+X3 => always0.IN0
+X3 => always0.IN0
+X3 => always0.IN0
+X3 => always0.IN1
+X3 => always0.IN1
+X4 => always0.IN0
+X4 => always0.IN0
+X4 => always0.IN0
+X4 => always0.IN1
+X4 => always0.IN1
+X4 => always0.IN1
+X5 => always0.IN0
+X5 => always0.IN0
+X5 => always0.IN1
+X5 => always0.IN1
+X5 => always0.IN1
+X5 => always0.IN1
+X6 => always0.IN0
+X6 => always0.IN1
+X6 => always0.IN1
+X6 => always0.IN1
+X6 => always0.IN1
+X6 => always0.IN1
+X7 => always0.IN1
+X7 => always0.IN1
+X7 => always0.IN1
+X7 => always0.IN1
+X7 => always0.IN1
+X7 => always0.IN1
+f <= always0.DB_MAX_OUTPUT_PORT_TYPE
+
+

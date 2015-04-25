@@ -1,0 +1,137 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'Ready'
+Slack : -2.865
+TNS   : -30.330
+
+Type  : Slow 1200mV 85C Model Setup 'clock'
+Slack : -1.380
+TNS   : -14.991
+
+Type  : Slow 1200mV 85C Model Setup 'Iter'
+Slack : -0.262
+TNS   : -2.293
+
+Type  : Slow 1200mV 85C Model Hold 'clock'
+Slack : 0.358
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Iter'
+Slack : 0.382
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Ready'
+Slack : 0.382
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'Iter'
+Slack : -0.582
+TNS   : -7.416
+
+Type  : Slow 1200mV 85C Model Removal 'Iter'
+Slack : 0.800
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Ready'
+Slack : -3.000
+TNS   : -35.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Iter'
+Slack : -3.000
+TNS   : -19.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -16.000
+
+Type  : Slow 1200mV 0C Model Setup 'Ready'
+Slack : -2.489
+TNS   : -24.344
+
+Type  : Slow 1200mV 0C Model Setup 'clock'
+Slack : -1.141
+TNS   : -12.498
+
+Type  : Slow 1200mV 0C Model Setup 'Iter'
+Slack : -0.132
+TNS   : -0.517
+
+Type  : Slow 1200mV 0C Model Hold 'clock'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Iter'
+Slack : 0.333
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Ready'
+Slack : 0.333
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'Iter'
+Slack : -0.432
+TNS   : -4.947
+
+Type  : Slow 1200mV 0C Model Removal 'Iter'
+Slack : 0.720
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Ready'
+Slack : -3.000
+TNS   : -35.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Iter'
+Slack : -3.000
+TNS   : -19.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -16.000
+
+Type  : Fast 1200mV 0C Model Setup 'Ready'
+Slack : -1.159
+TNS   : -6.293
+
+Type  : Fast 1200mV 0C Model Setup 'clock'
+Slack : -0.324
+TNS   : -2.466
+
+Type  : Fast 1200mV 0C Model Setup 'Iter'
+Slack : 0.286
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Iter'
+Slack : 0.179
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clock'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Ready'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'Iter'
+Slack : 0.038
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'Iter'
+Slack : 0.471
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Ready'
+Slack : -3.000
+TNS   : -40.183
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Iter'
+Slack : -3.000
+TNS   : -21.830
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -16.767
+
+------------------------------------------------------------

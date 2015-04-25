@@ -1,0 +1,27 @@
+module ternadder(Cin, x1, x0, y1, y0, x11, x10, y11, y10, s1, s0, Cout);
+	input Cin, x1, x0, y1, y0;
+	output y1, y0, Cout;
+	wire P0, G0, P1, G1, C0, C1;
+	
+	pAndG stage0(x1, x0, y1, y0, P0, G0);
+	pAndG stage1(x11, x10, y11, y10, P1, G1);
+	
+	assign C0 = G0 | P0 & Cin;
+	assign C1 = G1 | P1 & G0 | P1 & P0 & Cin;
+	
+	assign s1 = (~Cin & ~x1 & ~x0 & y1 & ~y0) | (~Cin & ~x1 & x0 & ~y1 & y0) | (~Cin & x1 & ~x0 & ~y1 & ~y0) | (Cin & ~x1 & ~x0 & ~y1 & y0) | (Cin & ~x1 & x0 & ~y1 & ~y0) | (Cin & x1 & ~x0 & y1 & y0);
+	assign s0 = (~Cin & ~x1 & ~x0 & ~y1 & y0) | (~Cin & ~x1 & x0 & ~y1 & ~y0) | (~Cin & x1 & ~x0 & y1 & ~y0) | (Cin & ~x1 & ~x0 & ~y1 & ~y0) | (Cin & ~x1 & x0 & y1 & ~y0) | (Cin & x1 & ~x0 & ~y1 & y0);
+	
+	assign s11 = (~C0 & ~x1 & ~x0 & y1 & ~y0) | (~C0 & ~x1 & x0 & ~y1 & y0) | (~C0 & x1 & ~x0 & ~y1 & ~y0) | (C0 & ~x1 & ~x0 & ~y1 & y0) | (C0 & ~x1 & x0 & ~y1 & ~y0) | (C0 & x1 & ~x0 & y1 & y0);
+	assign s10 = (~C0 & ~x1 & ~x0 & ~y1 & y0) | (~C0 & ~x1 & x0 & ~y1 & ~y0) | (~C0 & x1 & ~x0 & y1 & ~y0) | (C0 & ~x1 & ~x0 & ~y1 & ~y0) | (C0 & ~x1 & x0 & y1 & ~y0) | (C0 & x1 & ~x0 & ~y1 & y0);
+	
+endmodule 
+
+module pAndG (x1, x0, y1, y0, P, G);
+	input Cin, x1, x0, y1, y0;
+	output P, G;
+	
+	assign G = (~x1 & x0 & y1 & ~y0) | (x1 & ~x0 & ~y1 & y0) | (x1 & ~x0 & y1 & ~y0);
+	assign P = (~x1 & ~x0 & y1 & ~y0) | (~x1 & x0 & ~y1 & y0) | (x1 & ~x0 & ~y1 & ~y0);
+	
+endmodule 

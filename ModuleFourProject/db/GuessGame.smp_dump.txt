@@ -1,0 +1,13 @@
+
+State Machine - |GuessGame|y
+Name y.lose y.win y.sub y.less y.cmp y.g4 y.g3 y.g2 y.g1 y.init 
+y.init 0 0 0 0 0 0 0 0 0 0 
+y.g1 0 0 0 0 0 0 0 0 1 1 
+y.g2 0 0 0 0 0 0 0 1 0 1 
+y.g3 0 0 0 0 0 0 1 0 0 1 
+y.g4 0 0 0 0 0 1 0 0 0 1 
+y.cmp 0 0 0 0 1 0 0 0 0 1 
+y.less 0 0 0 1 0 0 0 0 0 1 
+y.sub 0 0 1 0 0 0 0 0 0 1 
+y.win 0 1 0 0 0 0 0 0 0 1 
+y.lose 1 0 0 0 0 0 0 0 0 1 

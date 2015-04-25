@@ -1,0 +1,116 @@
+module ReactionTimer(Clock, Start, Reset, LEDn, Digit1, Digit2, Digit3,Pushn);
+	input Clock, Start, Reset, c100, Pushn;
+	wire c100;
+	output wire LEDn;
+	output wire[1:7] Digit1, Digit2, Digit3;
+	wire [0:6] lfsrOut, downOut;
+	wire [3:0] BD0, BD1, BD2;
+	wire [18:0] Q;
+	reg LED;
+	reg w;
+	
+	
+	always @ (posedge Clock)
+	begin
+		w = ~(downOut[0] | downOut[1] | downOut[2] | downOut[3] | downOut[4] | downOut[5] | downOut[6]);
+		if (!Pushn || Reset)
+			LED <= 0;
+		else if (w)
+			LED <= 1;
+	end
+	
+	clockAdjust lowerFreq(Clock, 1, Q);
+	assign c100 = Q[0];
+	lfsr randomizer(1, lfsrOut, Clock);
+	downCount downcounter(downOut, c100, ~Start, lfsrOut);
+	BCDCount bcdcounter(c100, Reset, LED, BD0, BD1, BD2);
+	sevenSeg seg2(BD2, Digit3);
+	sevenSeg seg1(BD1, Digit2);
+	sevenSeg seg0(BD0, Digit1);
+endmodule
+
+module lfsr(En, OUT, clklf);
+	input En, clklf;
+	output reg [0:6] OUT;
+	
+	always @(clklf)
+		if (En)
+			OUT <= {OUT[6]^OUT[5], OUT[0], OUT[1], OUT[2], OUT[3], OUT[4], OUT[5]};
+endmodule
+
+module downCount(outp, clk, load, R);
+	input clk, load;
+	input [0:6] R;
+	output reg [0:6] outp;
+	
+	always @ (posedge clk)
+		if (load)
+			outp <= R;
+		else if (outp != 0)
+			Q = Q - 1;
+endmodule
+
+module BCDCount(ck, clear, E, BCD2, BCD1, BCD0);
+	input ck, clear, E;
+	output reg [3:0] BCD2, BCD1, BCD0;
+	
+	always @ (posedge ck)
+	begin 
+		if (clear)
+		begin
+			BCD2 <= 0;
+			BCD1 <= 0;
+			BCD0 <= 0;
+		end
+		else if (E)
+			if (BCD0 == 4'b1001)
+			begin
+				BCD0 <= 0;
+				if (BCD1 == 4'b1001)
+					BCD1 <= 0;
+					if (BCD2 == 4'b1001)
+						BCD2 <= 0;
+					else
+						BCD2 <= BCD2 + 1;
+				else
+					BCD1 <= BCD1 + 1;
+			end
+			else
+				BCD0 <= BCD0 + 1;
+	end
+endmodule
+
+module sevenSeg(bcd, leds);
+	input [3:0] bcd;
+	output reg [1:7] leds;
+	
+	always @ (bcd)
+		case (bcd)
+			0: leds = 7'b1111110;
+			1: leds = 7'b0110000;
+			2: leds = 7'b1101101;
+			3: leds = 7'b1111001;
+			4: leds = 7'b0110011;
+			5: leds = 7'b1011011;
+			6: leds = 7'b1011111;
+			7: leds = 7'b1110000;
+			8: leds = 7'b1111111;
+			9: leds = 7'b1111011;
+			default: leds = 7'bx;
+		endcase
+endmodule
+
+module clockAdjust(Cl, E, Q);
+	parameter n = 19;
+	input Cl, E;
+	output reg [n-1:0] Q;
+	
+	always @ (posedge Clock)
+		if (E)
+			Q <= Q + 1;
+endmodule
+					
+					
+				
+
+			

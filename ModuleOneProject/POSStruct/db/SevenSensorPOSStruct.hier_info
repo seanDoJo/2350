@@ -1,0 +1,46 @@
+|SevenSensorPOSStruct
+X1 => WideOr0.IN0
+X1 => WideOr1.IN0
+X1 => WideOr2.IN0
+X1 => WideOr3.IN0
+X1 => WideOr4.IN0
+X1 => WideOr5.IN0
+X2 => WideOr0.IN1
+X2 => WideOr1.IN1
+X2 => WideOr2.IN1
+X2 => WideOr3.IN1
+X2 => WideOr4.IN1
+X2 => WideOr6.IN0
+X3 => WideOr0.IN2
+X3 => WideOr1.IN2
+X3 => WideOr2.IN2
+X3 => WideOr3.IN2
+X3 => WideOr5.IN1
+X3 => WideOr6.IN1
+X4 => WideOr0.IN3
+X4 => WideOr1.IN3
+X4 => WideOr2.IN3
+X4 => WideOr4.IN2
+X4 => WideOr5.IN2
+X4 => WideOr6.IN2
+X5 => WideOr0.IN4
+X5 => WideOr1.IN4
+X5 => WideOr3.IN3
+X5 => WideOr4.IN3
+X5 => WideOr5.IN3
+X5 => WideOr6.IN3
+X6 => WideOr0.IN5
+X6 => WideOr2.IN4
+X6 => WideOr3.IN4
+X6 => WideOr4.IN4
+X6 => WideOr5.IN4
+X6 => WideOr6.IN4
+X7 => WideOr1.IN5
+X7 => WideOr2.IN5
+X7 => WideOr3.IN5
+X7 => WideOr4.IN5
+X7 => WideOr5.IN5
+X7 => WideOr6.IN5
+f <= WideAnd0.DB_MAX_OUTPUT_PORT_TYPE
+
+

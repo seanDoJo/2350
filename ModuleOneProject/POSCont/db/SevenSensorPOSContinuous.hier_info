@@ -1,0 +1,32 @@
+|SevenSensorPOSContinuous
+X1 => or6.IN0
+X1 => or5.IN0
+X2 => or7.IN0
+X2 => or5.IN1
+X3 => or7.IN1
+X3 => or6.IN1
+X3 => or4.IN1
+X4 => or7.IN1
+X4 => or6.IN1
+X4 => or5.IN1
+X4 => or3.IN1
+X5 => or7.IN1
+X5 => or6.IN1
+X5 => or5.IN1
+X5 => or4.IN1
+X5 => or2.IN1
+X6 => or7.IN1
+X6 => or6.IN1
+X6 => or5.IN1
+X6 => or4.IN1
+X6 => or3.IN1
+X6 => or1.IN1
+X7 => or7.IN1
+X7 => or6.IN1
+X7 => or5.IN1
+X7 => or4.IN1
+X7 => or3.IN1
+X7 => or2.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+

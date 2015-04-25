@@ -1,0 +1,125 @@
+module ternaddmux(x1, x0, x11, x10, s1, s0, s11, s10, Cin, Cout);
+input x1, x0, x11, x10, Cin;
+output reg s1, s0, s11, s10, Cout, G0, P0, G1, P1, C0;
+
+always @ (x1, x0, x11, x10, Cin)
+begin 
+	/*calculate G0 and P0*/
+	if (x1 == 0)
+		assign G0 = x0 & y1 & ~y0;
+		assign P0 = x0 == 1 ? ~y1 & y0 : y1 & ~y0;
+	else
+		assign G0 = ~x0 & y1 ^ y0;
+		assign P0 = ~x0 & ~y1 & ~y0;
+	/*calculate G1 and P1*/
+	if (x11 == 0)
+		assign G1 = x10 & y11 & ~y10;
+		assign P1 = x10 == 1 ? ~y11 & y10 : y11 & ~y10;
+	else
+		assign G1 = ~x10 & y11 ^ y10;
+		assign P1 = ~x10 & ~y11 & ~y10;
+	/*calculate C0*/
+	if (Cin == 1)
+		assign C0 = G0 | P0;
+	else
+		assign C0 = G0;
+	/*calculate Cout*/
+	if (Cin == 1)
+		assign Cout = G1 | P1 & G0 | P1 & P0;
+	else
+		assign Cout = G1 | P1 & G0;
+	/*calculate S0*/
+	if (Cin == 1)
+		if (x1 == 1)
+			if (x0 == 0)
+				assign s0 = ~y1 & y0;
+			else
+				assign s0 = 0;
+		else
+			if (x0 == 1)
+				assign s0 = y1 & ~y0;
+			else
+				assign s0 = ~y1 & ~y0;
+	else
+		if (x1 == 1)
+			if (x0 == 0)
+				assign s0 = y1 & ~y0;
+			else
+				assign s0 = 0;
+		else
+			if (x0 == 1)
+				assign s0 = ~y1 & ~y0;
+			else
+				assign s0 = ~y1 & y0;
+	/*calculate S1*/
+	if (Cin == 1)
+		if (x1 == 1)
+			if (x0 == 0)
+				assign s1 = y1 & ~y0;
+			else
+				assign s1 = 0;
+		else
+			if (x0 == 1)
+				assign s1 = ~y1 & ~y0;
+			else
+				assign s1 = ~y1 & y0;
+	else
+		if (x1 == 1)
+			if (x0 == 0)
+				assign s1 = ~y1 & y0;
+			else
+				assign s1 = 0;
+		else
+			if (x0 == 1)
+				assign s0 = ~y1 & y0;
+			else
+				assign s0 = y1 & ~y0;
+	/*calculate S10*/
+	if (C0 == 1)
+		if (x11 == 1)
+			if (x10 == 0)
+				assign s10 = ~y11 & y10;
+			else
+				assign s10 = 0;
+		else
+			if (x10 == 1)
+				assign s10 = y11 & ~y10;
+			else
+				assign s10 = ~y11 & ~y10;
+	else
+		if (x11 == 1)
+			if (x10 == 0)
+				assign s10 = y11 & ~y10;
+			else
+				assign s10 = 0;
+		else
+			if (x10 == 1)
+				assign s10 = ~y11 & ~y10;
+			else
+				assign s10 = ~y11 & y10;
+	/*calculate S11*/
+	if (C0 == 1)
+		if (x11 == 1)
+			if (x10 == 0)
+				assign s11 = y11 & ~y10;
+			else
+				assign s11 = 0;
+		else
+			if (x10 == 1)
+				assign s11 = ~y11 & ~y10;
+			else
+				assign s11 = ~y11 & y10;
+	else
+		if (x11 == 1)
+			if (x10 == 0)
+				assign s11 = ~y11 & y10;
+			else
+				assign s11 = 0;
+		else
+			if (x10 == 1)
+				assign s10 = ~y11 & y10;
+			else
+				assign s10 = y11 & ~y10;
+end
+endmodule 
+	
